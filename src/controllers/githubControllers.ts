@@ -2,7 +2,8 @@ import { Request, Response } from 'express'
 import { AxiosRequestConfig } from 'axios'
 import { GithubInstances } from '../utils'
 
-const { userInstance, pinnedRepoInstance } = new GithubInstances()
+const { userInstance, pinnedRepoInstance }: GithubInstances =
+  new GithubInstances()
 
 export const fetchUsers = async (
   req: Request,
