@@ -3,6 +3,7 @@ import { OptionsUrlencoded, OptionsJson } from 'body-parser'
 import cors, { CorsOptions } from 'cors'
 import githubRoutes from './routes/githubRoutes'
 
+/* A type definition for the function parameters. */
 interface initializerPropsType {
   app: Application
   corsOptions: CorsOptions
@@ -10,13 +11,16 @@ interface initializerPropsType {
   optionsJson: OptionsJson
 }
 
+/**
+ * This function initializes the app with middlewares and routers.
+ * @param {initializerPropsType}  - initializerPropsType
+ */
 const initializer = ({
   app,
   corsOptions,
   bodyparserOptions,
   optionsJson,
 }: initializerPropsType) => {
-  // START
 
   // middlewares
   app.use(cors(corsOptions))
@@ -26,8 +30,6 @@ const initializer = ({
 
   // routers
   app.use('/github', githubRoutes)
-
-  // END
 }
 
 export default initializer
