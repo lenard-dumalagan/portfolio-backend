@@ -21,6 +21,12 @@ export const fetchUsers = async (
   }
 }
 
+/**
+ * It takes a username from the query string, makes a request to the GitHub API, and returns the
+ * response
+ * @param {Request} req - Request - The request object
+ * @param {Response} res - Response
+ */
 export const fetchRepos = async (
   req: Request,
   res: Response
